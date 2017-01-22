@@ -25,6 +25,8 @@ RUN \
       zlib1g-dev \
       libz-dev \
       libmemcached-dev \
+      libmagickwand-dev \
+      libmagickcore-dev \
     # clear lists after install
     && rm -rf /var/lib/apt/lists/* \
     # configure gd library

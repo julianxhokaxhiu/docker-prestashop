@@ -13,7 +13,7 @@ RUN \
     # enable mod_rewrite
     a2enmod rewrite \
     # fetch latest repository status
-    apt-get update \
+    && apt-get update \
     # install development packages
     && apt-get install -y \
       libmcrypt-dev \

@@ -23,6 +23,8 @@ RUN \
       libxml2-dev \
       libicu-dev \
       zlib1g-dev \
+      libz-dev \
+      libmemcached-dev \
     # clear lists after install
     && rm -rf /var/lib/apt/lists/* \
     # configure gd library
@@ -33,8 +35,10 @@ RUN \
     && pecl install apcu-4.0.11 \
     # install IMagick from PECL
     && pecl install imagick-3.4.1 \
+    # install memcached from PECL
+    && pecl install memcached \
     # enable PHP extensions
-    && docker-php-ext-enable opcache apcu imagick
+    && docker-php-ext-enable opcache apcu imagick memcached
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php

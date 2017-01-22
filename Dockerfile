@@ -30,7 +30,7 @@ RUN \
     # install PHP extensions
     && docker-php-ext-install iconv intl mcrypt opcache pdo mysql pdo_mysql mbstring soap gd zip \
     # install APCu from PECL
-    && pecl install apcu \
+    && pecl install apcu-4.0.11 \
     # install IMagick from PECL
     && pecl install imagick-3.4.1 \
     # enable PHP extensions
@@ -53,5 +53,15 @@ RUN { \
     echo "upload_max_filesize = 25M"; \
     echo "post_max_size = 50M"; \
   } > /usr/local/etc/php/conf.d/uploads.ini
+
+# prestashop recommended settings
+RUN { \
+    echo "allow_url_fopen = on"; \
+    echo "register_globals = off"; \
+    echo "magic_quotes_gpc = off"; \
+    echo "magic_quotes_runtime = off"; \
+    echo "magic_quotes_sybase = off"; \
+    echo "safe_mode = off"; \
+  } > /usr/local/etc/php/conf.d/prestashop.ini
 
 VOLUME /var/www/html

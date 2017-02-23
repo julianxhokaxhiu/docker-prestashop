@@ -38,7 +38,7 @@ RUN \
     # install IMagick from PECL
     && pecl install imagick-3.4.1 \
     # install memcached from PECL
-    && pecl install memcached \
+    && pecl install memcached-2.2.0 \
     # enable PHP extensions
     && docker-php-ext-enable opcache apcu imagick memcached
 

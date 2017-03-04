@@ -32,7 +32,7 @@ RUN \
     # configure gd library
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     # install PHP extensions
-    && docker-php-ext-install iconv intl mcrypt opcache pdo mysql pdo_mysql mbstring soap gd zip \
+    && docker-php-ext-install iconv intl mcrypt opcache pdo mysqli pdo_mysql mbstring soap gd zip \
     # install APCu from PECL
     && pecl install apcu \
     # install IMagick from PECL

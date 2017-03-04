@@ -68,6 +68,7 @@ RUN { \
     echo "magic_quotes_runtime = off"; \
     echo "magic_quotes_sybase = off"; \
     echo "safe_mode = off"; \
+    echo "short_open_tag = off"; \
   } > /usr/local/etc/php/conf.d/prestashop.ini
 
 VOLUME /var/www/html

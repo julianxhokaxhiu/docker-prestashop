@@ -1,12 +1,12 @@
 # Prestashop Docker
 # PHP Docker for Prestashop on Steroids
 #
-# VERSION 0.1
+# VERSION 0.2
 
-FROM php:5.6-apache
+FROM php:7.0-apache
 MAINTAINER Julian Xhokaxhiu <info [at] julianxhokaxhiu [dot] com>
 
-LABEL Description="PHP Docker for Prestashop on Steroids" Vendor="Julian Xhokaxhiu" Version="0.1"
+LABEL Description="PHP Docker for Prestashop on Steroids" Vendor="Julian Xhokaxhiu" Version="0.2"
 
 
 RUN \
@@ -34,11 +34,11 @@ RUN \
     # install PHP extensions
     && docker-php-ext-install iconv intl mcrypt opcache pdo mysql pdo_mysql mbstring soap gd zip \
     # install APCu from PECL
-    && pecl install apcu-4.0.11 \
+    && pecl install apcu \
     # install IMagick from PECL
-    && pecl install imagick-3.4.1 \
+    && pecl install imagick \
     # install memcached from PECL
-    && pecl install memcached-2.2.0 \
+    && pecl install memcached \
     # enable PHP extensions
     && docker-php-ext-enable opcache apcu imagick memcached
 

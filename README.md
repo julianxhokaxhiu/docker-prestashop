@@ -3,11 +3,11 @@ PHP Docker for Prestashop on Steroids
 
 ## Goal
 
-This Docker should serve as a starting point for self-hosting a personal Prestashop 1.6.x installation.
+This Docker should serve as a starting point for self-hosting a personal Prestashop 1.7.x installation.
 
 ## What is included?
 
-* Apache + PHP 5.6 + VOLUME ( thanks to https://hub.docker.com/_/php/ )
+* Apache + PHP 7.0 + VOLUME ( thanks to https://hub.docker.com/_/php/ )
 * Some PHP extensions enabled ( see below )
 * Apache mod_rewrite enabled
 
